@@ -1,6 +1,6 @@
 import React from "react"
 
-const SearchBar = () => {
+const SearchBar = props => {
   return (
     <div>
       <strong>Sort by:</strong>
@@ -8,20 +8,28 @@ const SearchBar = () => {
         <input
           type="radio"
           value="Alphabetically"
+          name="sortMethod"
           checked={null}
-          onChange={null}
+          onChange={props.sortStocks}
         />
         Alphabetically
       </label>
       <label>
-        <input type="radio" value="Price" checked={null} onChange={null} />
+        <input
+          type="radio"
+          name="sortMethod"
+          value="Price"
+          checked={null}
+          onChange={props.sortStocks}
+        />
         Price
       </label>
       <br />
 
       <label>
         <strong>Filter:</strong>
-        <select onChange={null}>
+        <select onChange={props.filterStocks}>
+          <option value="Default">Please Select an Option</option>
           <option value="Tech">Tech</option>
           <option value="Sportswear">Sportswear</option>
           <option value="Finance">Finance</option>

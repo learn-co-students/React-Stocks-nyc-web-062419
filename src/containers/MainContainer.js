@@ -23,7 +23,10 @@ class MainContainer extends Component {
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar
+          sortStocks={this.props.sortStocks}
+          filterStocks={this.props.filterStocks}
+        />
 
         <div className="row">
           <div className="col-8">
